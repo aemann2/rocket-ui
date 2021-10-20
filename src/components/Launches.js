@@ -3,14 +3,17 @@ import { LaunchContext } from '../store/LaunchContext';
 import Launch from './Launch';
 
 const Sample = () => {
-	const { loading, launches, getLaunches } = useContext(LaunchContext);
+	const { showModal, loading, launches, getLaunches } =
+		useContext(LaunchContext);
 
 	useEffect(() => {
 		getLaunches();
 	}, []);
 
-	const Launches = launches.map((launch) => {
-		return <Launch key={launch.flight_number} launch={launch} />;
+	console.log(showModal);
+
+	const Launches = launches.map((launch, index) => {
+		return <Launch key={index} launch={launch} />;
 	});
 
 	return (
@@ -20,7 +23,7 @@ const Sample = () => {
 				{loading ? <h1>Loading...</h1> : <ul>{Launches}</ul>}
 			</div>
 			<div className='launches__buttons'>
-				<button>All</button>
+				<button onClick={() => getLaunches()}>All</button>
 				<button>Upcoming</button>
 				<button>Previous</button>
 			</div>

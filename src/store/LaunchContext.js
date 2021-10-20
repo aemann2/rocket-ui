@@ -33,7 +33,7 @@ const LaunchProvider = ({ children }) => {
 			.catch((err) => console.log(err));
 	};
 
-	const setLaunchModal = () => {
+	const toggleLaunchModal = () => {
 		dispatchLaunchAction({ type: 'TOGGLE_MODAL' });
 	};
 
@@ -42,7 +42,7 @@ const LaunchProvider = ({ children }) => {
 		loading: launchState.loading,
 		showModal: launchState.showModal,
 		getLaunches,
-		setLaunchModal,
+		toggleLaunchModal,
 	};
 
 	return (
