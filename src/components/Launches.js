@@ -15,9 +15,14 @@ const Sample = () => {
 
 	return (
 		<div className='launches'>
-			<h1>Space X Launches</h1>
+			<h1 className='launches__heading'>Space X Launches</h1>
 			<div className='launches__container'>
 				{loading ? <h1>Loading...</h1> : <ul>{Launches}</ul>}
+			</div>
+			<div className='launches__buttons'>
+				<button>All</button>
+				<button>Upcoming</button>
+				<button>Previous</button>
 			</div>
 		</div>
 	);

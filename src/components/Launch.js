@@ -3,7 +3,7 @@ import React from 'react';
 const Launch = ({ launch }) => {
 	const { flight_number, mission_name } = launch;
 	return (
-		<li>
+		<li className='launch'>
 			<h2>{mission_name}</h2>
 			<p>Flight number: {flight_number}</p>
 		</li>

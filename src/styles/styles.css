@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #020202;
+  font-family: Arial, Verdana, sans-serif;
 }
 
 *,
@@ -18,12 +21,47 @@ html {
 body {
   min-height: 100vh;
   font-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.launches {
+  display: block;
+  width: 500px;
+  margin-top: 10rem;
+}
+
+.launches__heading {
+  color: #f1eded;
+  font-family: 'Ropa Sans', sans-serif;
 }
 
 .launches__container {
+  color: #f1eded;
   height: 400px;
-  width: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.launches__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.launches button {
+  cursor: pointer;
+  width: 100px;
+}
+
+.launch {
+  margin: 1rem 0;
 }
 /*# sourceMappingURL=styles.css.map */

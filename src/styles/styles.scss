@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+
+$black: #020202;
+$white: #f1eded;
+
 html {
 	box-sizing: border-box;
+	background-color: $black;
+	font-family: Arial, Verdana, sans-serif;
 }
 *,
 *:before,
@@ -15,6 +22,9 @@ html {
 body {
 	min-height: 100vh;
 	font-size: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 @import 'launches';
+@import 'launch';
