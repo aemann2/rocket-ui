@@ -3,8 +3,7 @@ import { LaunchContext } from '../store/LaunchContext';
 import Launch from './Launch';
 
 const Launches = ({ getRocketData }) => {
-	const { showModal, loading, launches, getLaunches } =
-		useContext(LaunchContext);
+	const { loading, launches, getLaunches } = useContext(LaunchContext);
 
 	useEffect(() => {
 		getLaunches();

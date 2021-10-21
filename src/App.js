@@ -10,7 +10,6 @@ function App() {
 	const getRocketData = (data) => {
 		setRocketData(data);
 	};
-	console.log(rocketData);
 
 	return (
 		<>
