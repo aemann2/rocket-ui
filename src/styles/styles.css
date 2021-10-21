@@ -44,13 +44,13 @@ body {
           animation: slide-down 300ms ease-out forwards;
 }
 
-.modal h2 {
-  display: inline;
-  font-size: 1rem;
+.modal :not(:last-child) {
+  margin-bottom: 1rem;
 }
 
-.modal p {
-  margin-bottom: 1rem;
+.modal h2 {
+  display: inline-block;
+  font-size: 1rem;
 }
 
 .modal button {
@@ -94,10 +94,13 @@ body {
 
 .launch {
   margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid silver;
 }
 
 .launch h2 {
-  display: inline;
+  display: inline-block;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -136,11 +139,22 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .launches button {
   cursor: pointer;
   width: 100px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: white;
+}
+
+.launches button:hover {
+  background-color: gold;
 }
 
 /* Firefox */

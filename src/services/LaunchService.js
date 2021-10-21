@@ -6,7 +6,7 @@ const serviceUrl = `${SERVICES_URL}/launches`;
 const api = axios.create();
 
 const launchService = {
-	get: () => api.get(`${serviceUrl}`),
+	get: (type) => api.get(`${serviceUrl}${type ? '/' + type : ''}`),
 };
 
 export default launchService;

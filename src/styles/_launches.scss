@@ -22,11 +22,21 @@
 	&__buttons {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 1rem;
 	}
 
 	button {
 		cursor: pointer;
 		width: 100px;
+		font-size: 1rem;
+		padding: 5px 10px;
+		border: none;
+		transition: 0.3s;
+		background-color: white;
+
+		&:hover {
+			background-color: gold;
+		}
 	}
 }
 

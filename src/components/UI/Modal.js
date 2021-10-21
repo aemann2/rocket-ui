@@ -24,19 +24,13 @@ const Modal = () => {
 			{!isEmpty(rocketData) ? (
 				<div className='modal'>
 					<div>
-						<p>
-							<h2>Rocket Name:</h2> {rocket_name}
-						</p>
+						<h2>Rocket Name:</h2> {rocket_name}
 					</div>
 					<div>
-						<p>
-							<h2>Cost Per Launch:</h2> ${numberWithCommas(cost_per_launch)}
-						</p>
+						<h2>Cost Per Launch:</h2> ${numberWithCommas(cost_per_launch)}
 					</div>
 					<div>
-						<p>
-							<h2>Rocket Description:</h2> {description}
-						</p>
+						<h2>Rocket Description:</h2> {description}
 					</div>
 					<button onClick={() => toggleLaunchModal()}>Close</button>
 				</div>

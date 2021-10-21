@@ -24,10 +24,10 @@ const LaunchProvider = ({ children }) => {
 		initialState
 	);
 
-	const getLaunches = () => {
+	const getLaunches = (type) => {
 		dispatchLaunchAction({ type: 'SET_LOADING', payload: true });
 		launchService
-			.get()
+			.get(type)
 			.then((res) => {
 				const result = res.data;
 				dispatchLaunchAction({ type: 'GET_LAUNCHES', payload: result });

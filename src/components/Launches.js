@@ -21,8 +21,8 @@ const Launches = ({ getRocketData }) => {
 			</div>
 			<div className='launches__buttons'>
 				<button onClick={() => getLaunches()}>All</button>
-				<button>Upcoming</button>
-				<button>Previous</button>
+				<button onClick={() => getLaunches('upcoming')}>Upcoming</button>
+				<button onClick={() => getLaunches('past')}>Past</button>
 			</div>
 		</div>
 	);

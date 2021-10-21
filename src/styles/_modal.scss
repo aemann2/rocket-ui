@@ -10,13 +10,13 @@
 	z-index: 30;
 	animation: slide-down 300ms ease-out forwards;
 
-	h2 {
-		display: inline;
-		font-size: 1rem;
+	:not(:last-child) {
+		margin-bottom: 1rem;
 	}
 
-	p {
-		margin-bottom: 1rem;
+	h2 {
+		display: inline-block;
+		font-size: 1rem;
 	}
 
 	button {
