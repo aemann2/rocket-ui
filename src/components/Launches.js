@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { LaunchContext } from '../store/LaunchContext';
 import Launch from './Launch';
 
-const Sample = () => {
+const Launches = ({ getRocketData }) => {
 	const { showModal, loading, launches, getLaunches } =
 		useContext(LaunchContext);
 
@@ -10,10 +10,8 @@ const Sample = () => {
 		getLaunches();
 	}, []);
 
-	console.log(showModal);
-
 	const Launches = launches.map((launch, index) => {
-		return <Launch key={index} launch={launch} />;
+		return <Launch key={index} launch={launch} getRocketData={getRocketData} />;
 	});
 
 	return (
@@ -31,4 +29,4 @@ const Sample = () => {
 	);
 };
 
-export default Sample;
+export default Launches;

@@ -1,9 +1,10 @@
 import Portal from './Portal';
 
-const Modal = ({ children }) => (
+const Modal = ({ rocketData }) => (
 	<Portal>
 		<div className='modal'>
-			<div>{children}</div>
+			<div>{rocketData.rocket_name}</div>
+			<div>{rocketData.description}</div>
 		</div>
 	</Portal>
 );
