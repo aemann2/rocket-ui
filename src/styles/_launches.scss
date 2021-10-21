@@ -1,10 +1,14 @@
 .launches {
 	display: block;
-	width: 500px;
-	margin-top: 10rem;
+	width: 400px;
+	margin-top: 16rem;
 
 	&__heading {
 		color: $white;
+		font-size: 3rem;
+		font-weight: 200;
+		text-align: center;
+		margin-bottom: 2rem;
 		font-family: 'Ropa Sans', sans-serif;
 	}
 
@@ -24,4 +28,27 @@
 		cursor: pointer;
 		width: 100px;
 	}
+}
+
+// Scrollbar
+
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: #ffffff #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+	background: $black;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: 3px none #ffffff;
 }

@@ -1,6 +1,12 @@
 .launch {
 	margin: 1rem 0;
 	h2 {
+		display: inline;
 		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			color: gold;
+		}
 	}
 }

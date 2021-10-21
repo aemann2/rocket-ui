@@ -31,7 +31,7 @@ body {
 
 .modal {
   position: fixed;
-  top: 20vh;
+  top: 30px;
   left: 5%;
   width: 90%;
   background-color: white;
@@ -44,8 +44,19 @@ body {
           animation: slide-down 300ms ease-out forwards;
 }
 
+.modal h2 {
+  display: inline;
+  font-size: 1rem;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+}
+
 .modal button {
   cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -86,17 +97,28 @@ body {
 }
 
 .launch h2 {
+  display: inline;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.launch h2:hover {
+  color: gold;
 }
 
 .launches {
   display: block;
-  width: 500px;
-  margin-top: 10rem;
+  width: 400px;
+  margin-top: 16rem;
 }
 
 .launches__heading {
   color: #f1eded;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 2rem;
   font-family: 'Ropa Sans', sans-serif;
 }
 
@@ -119,5 +141,26 @@ body {
 .launches button {
   cursor: pointer;
   width: 100px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ffffff #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #020202;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px none #ffffff;
 }
 /*# sourceMappingURL=styles.css.map */
