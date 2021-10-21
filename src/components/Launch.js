@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import rocketService from '../services/RocketService';
 import { LaunchContext } from '../store/LaunchContext';
 
-const Launch = ({ launch, getRocketData }) => {
-	const { showModal, toggleLaunchModal } = useContext(LaunchContext);
+const Launch = ({ launch }) => {
+	const { showModal, toggleLaunchModal, getRocketData } =
+		useContext(LaunchContext);
 	const { flight_number, mission_name } = launch;
 
 	const handleClick = async () => {
 		try {
-			const res = await rocketService.get(launch.rocket.rocket_id);
-			getRocketData(res.data);
+			await getRocketData(launch.rocket.rocket_id);
 		} catch (err) {
 			console.log(err);
 		}

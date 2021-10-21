@@ -2,9 +2,17 @@ import { useContext } from 'react';
 import { LaunchContext } from '../../store/LaunchContext';
 import Portal from './Portal';
 
-const Modal = ({ rocketData }) => {
-	const { toggleLaunchModal } = useContext(LaunchContext);
+const Modal = () => {
+	const { toggleLaunchModal, rocketData } = useContext(LaunchContext);
 	const { rocket_name, cost_per_launch, description } = rocketData;
+
+	// check for empty object, otherwise numberWithCommas will fail
+	function isEmpty(obj) {
+		for (let x in obj) {
+			return false;
+		}
+		return true;
+	}
 
 	// stack overflow to the rescue
 	function numberWithCommas(x) {
@@ -13,18 +21,22 @@ const Modal = ({ rocketData }) => {
 
 	return (
 		<Portal>
-			<div className='modal'>
-				<div>
-					<p>Rocket Name: {rocket_name}</p>
+			{!isEmpty(rocketData) ? (
+				<div className='modal'>
+					<div>
+						<p>Rocket Name: {rocket_name}</p>
+					</div>
+					<div>
+						<p>Cost Per Launch: ${numberWithCommas(cost_per_launch)}</p>
+					</div>
+					<div>
+						<p>Rocket Description: {description}</p>
+					</div>
+					<button onClick={() => toggleLaunchModal()}>Close</button>
 				</div>
-				<div>
-					<p>Cost Per Launch: ${numberWithCommas(cost_per_launch)}</p>
-				</div>
-				<div>
-					<p>Rocket Description: {description}</p>
-				</div>
-				<button onClick={() => toggleLaunchModal()}>Close</button>
-			</div>
+			) : (
+				<div>Loading...</div>
+			)}
 		</Portal>
 	);
 };

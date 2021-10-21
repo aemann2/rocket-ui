@@ -5,6 +5,11 @@ const launchReducer = (state, action) => {
 				...state,
 				launches: action.payload,
 			};
+		case 'GET_ROCKETDATA':
+			return {
+				...state,
+				rocketData: action.payload,
+			};
 		case 'SET_LOADING':
 			return {
 				...state,
