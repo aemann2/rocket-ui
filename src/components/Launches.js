@@ -3,11 +3,18 @@ import { LaunchContext } from '../store/LaunchContext';
 import Launch from './Launch';
 
 const Launches = ({ getRocketData }) => {
-	const { loading, launches, getLaunches } = useContext(LaunchContext);
+	const { loading, launches, getLaunches, toggleLaunchModal } =
+		useContext(LaunchContext);
 
 	useEffect(() => {
 		getLaunches();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	const handleClick = (endpoint) => {
+		getLaunches(endpoint);
+		toggleLaunchModal();
+	};
 
 	const Launches = launches.map((launch, index) => {
 		return <Launch key={index} launch={launch} getRocketData={getRocketData} />;
@@ -20,9 +27,9 @@ const Launches = ({ getRocketData }) => {
 				{loading ? <h1>Loading...</h1> : <ul>{Launches}</ul>}
 			</div>
 			<div className='launches__buttons'>
-				<button onClick={() => getLaunches()}>All</button>
-				<button onClick={() => getLaunches('upcoming')}>Upcoming</button>
-				<button onClick={() => getLaunches('past')}>Past</button>
+				<button onClick={() => handleClick()}>All</button>
+				<button onClick={() => handleClick('upcoming')}>Upcoming</button>
+				<button onClick={() => handleClick('past')}>Past</button>
 			</div>
 		</div>
 	);
