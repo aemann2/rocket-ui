@@ -1,3 +1,13 @@
+# Project overhaul of rocket-ui
+
+## Changes
+
+- Used Context for global state management
+- Used dart-sass instead of node-sass
+- Used usePortal hook for modal
+- Added routes for Upcoming and Past launches
+- Generally cleaned up and neatened code
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
