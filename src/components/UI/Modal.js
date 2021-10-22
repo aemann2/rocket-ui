@@ -4,7 +4,7 @@ import Portal from './Portal';
 
 const Modal = () => {
 	const { toggleLaunchModal, rocketData } = useContext(LaunchContext);
-	const { rocket_name, cost_per_launch, description } = rocketData;
+	const { id, rocket_name, cost_per_launch, description } = rocketData;
 
 	// check for empty object, otherwise numberWithCommas will fail
 	function isEmpty(obj) {
@@ -24,7 +24,7 @@ const Modal = () => {
 			{!isEmpty(rocketData) ? (
 				<div className='modal'>
 					<div>
-						<h2>Rocket Name:</h2> {rocket_name}
+						<h2>Rocket Name / ID:</h2> {rocket_name} / {id}
 					</div>
 					<div>
 						<h2>Cost Per Launch:</h2> ${numberWithCommas(cost_per_launch)}
